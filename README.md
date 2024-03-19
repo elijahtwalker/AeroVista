@@ -1,1 +1,2 @@
 # AeroVista
+Our project aims to optimize search and rescue (SAR) drone performance through computer vision and SAR algorithm comparison to improve object classification and strategic tracking. Unmanned Aerial Vehicles (UAVs) like drones are commonly used for SAR missions by identifying and following an item or personnel across a finite geographical area (Ranging from a ruined battlefield to a crowded public mall). UAV performance can prove critical in life or death crises where speed and accuracy are vital.
