@@ -1,2 +1,18 @@
 # AeroVista
-Our project aims to optimize search and rescue (SAR) drone performance through computer vision and SAR algorithm comparison to improve object classification and strategic tracking. Unmanned Aerial Vehicles (UAVs) like drones are commonly used for SAR missions by identifying and following an item or personnel across a finite geographical area (Ranging from a ruined battlefield to a crowded public mall). UAV performance can prove critical in life or death crises where speed and accuracy are vital.
+**Tags:** Machine Learning (ML), Computer Vision (CV), Artificial Intelligence (AI), Object Classification, Image Segmentation, Search-and-Rescue (SAR), Unmanned Aerial Vehicles (UAVs), Tello drones
+## Leveraging CV to Create High-Performance SAR Drones
+Through optimizing SAR drone performance using CV and SAR algorithm comparison, AeroVista aims to improve object classification and strategic tracking in UAVs. UAVs—like drones—are commonly used for SAR missions by identifying and following an item or personnel across a finite geographical area (ranging from a ruined battlefield to a crowded public mall). The performance of UAVs can prove vital in life-or-death crises where speed and accuracy are of utmost importance.
+
+### Requirements
+- Learn the basics of convolutional neural networks (CNNs) and image segmentation
+- Learn and utilize Python, OpenCV, PyTorch, and a Python-based API for Tello drones
+- Develop a high level of accuracy for classification in route development
+- Identify people or objects from multiple perspectives
+
+### Developers
+- [Elijah Walker](https://www.linkedin.com/in/elijahtruthwalker/), Research Lead
+- [Aba Onumah](https://www.linkedin.com/in/aba-onumah-63315328b/)
+- [Adrian Tran](https://www.linkedin.com/in/adrianvtran/)
+- [Azia Bay-Asen](https://www.linkedin.com/in/aziabay/)
+- [Ibrahim Abdel Rahman](https://www.linkedin.com/in/ibrahim-abdel-rahman/)
+- [Sreevasan Sivasubramanian](https://www.linkedin.com/in/sreevasan-sivasubramanian-0a3844228/)
