@@ -8,6 +8,7 @@ Team Members: [Aba Onumah](https://www.linkedin.com/in/aba-onumah-63315328b/), [
 Faculty Advisors: Dr. Yapeng Tian and Dr. Yu Xiang
 
 ### POSTER
+![Aerovista Poster](file:///Users/elijahwalker/Downloads/Aerovista_2_2%20(2).pdf)
 
 **Tags:** Machine Learning (ML), Computer Vision (CV), Artificial Intelligence (AI), Object Classification, Image Segmentation, Search-and-Rescue (SAR), Unmanned Aerial Vehicles (UAVs), Tello drones
 ## Leveraging CV to Create High-Performance SAR Drones
