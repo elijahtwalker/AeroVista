@@ -7,6 +7,8 @@ Team Members: [Aba Onumah](https://www.linkedin.com/in/aba-onumah-63315328b/), [
 
 Faculty Advisors: Dr. Yapeng Tian and Dr. Yu Xiang
 
+### POSTER
+
 **Tags:** Machine Learning (ML), Computer Vision (CV), Artificial Intelligence (AI), Object Classification, Image Segmentation, Search-and-Rescue (SAR), Unmanned Aerial Vehicles (UAVs), Tello drones
 ## Leveraging CV to Create High-Performance SAR Drones
 Through optimizing SAR drone performance using CV and SAR algorithm comparison, AeroVista aims to improve object classification and strategic tracking in UAVs. UAVs—like drones—are commonly used for SAR missions by identifying and following an item or personnel across a finite geographical area (ranging from a ruined battlefield to a crowded public mall). The performance of UAVs can prove vital in life-or-death crises where speed and accuracy are of utmost importance.
