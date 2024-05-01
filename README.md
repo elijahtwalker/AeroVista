@@ -2,7 +2,7 @@
 
 ## Contributors
 * **Research Lead:** [Elijah Walker](https://www.linkedin.com/in/elijahtruthwalker/)
-* **Research Members:** [Aba Onumah](https://www.linkedin.com/in/aba-onumah-63315328b/), [Adrian Tran](https://www.linkedin.com/in/adrianvtran/), [Azia Bay-Asen](https://www.linkedin.com/in/aziabay/), [Ibrahim Abdel Rahman](https://www.linkedin.com/in/ibrahim-abdel-rahman/), [Sreevasan Sivasubramanian](https://www.linkedin.com/in/sreevasan-sivasubramanian-0a3844228/)
+* **Research Team:** [Aba Onumah](https://www.linkedin.com/in/aba-onumah-63315328b/), [Adrian Tran](https://www.linkedin.com/in/adrianvtran/), [Azia Bay-Asen](https://www.linkedin.com/in/aziabay/), [Ibrahim Abdel Rahman](https://www.linkedin.com/in/ibrahim-abdel-rahman/), [Sreevasan Sivasubramanian](https://www.linkedin.com/in/sreevasan-sivasubramanian-0a3844228/)
 * **Faculty Advisors:** Dr. Yapeng Tian, Dr. Yu Xiang
 
 ## Poster
