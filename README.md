@@ -25,17 +25,20 @@ Our dataset ...
 
 ## Architectures
 
-### Mask-RCNN
+### Mask R-CNN
 
 The mask ...
 
 #### Backbone
+
 The backbone consists of ...
 
 #### Inner Layers
+
 The inner processing ...
 
 #### The Head
+
 In contrast to ...
 
 ### RTMDet
@@ -43,12 +46,15 @@ In contrast to ...
 The Real-Time ...
 
 #### Backbone
+
 The backbone consists of ...
 
 #### Neck
-The inner processing ...
+
+RTMDet uses the Feature Pyramid Attention Module with Positional Encoding for Object Detection (PAFPN) for its neck architecture, fusing multi-level features from the backbone. PAFPN is built on Feature Pyramid Networks (FPNs), popular neural network architectures used for object detection. FPNs come with the disadvantage of having long information paths between lower layers and top-most features. PAFPN overcomes this disadvantage by combing FPNs with bottom-up path augmentation. The neck architecture uses the same basic building blocks as the backbone but includes bottom-up and top-down feature propagation to enhance the overarching pyramid feature map.
 
 #### Head
+
 In contrast to ...
 
 ## Results
@@ -56,8 +62,6 @@ In contrast to ...
 As shown in the figures ...
 
 ## Analysis
-
-The implication of our results ...
 
 ## Conclusion
 
