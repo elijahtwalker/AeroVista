@@ -1,64 +1,64 @@
-# AeroVista
+# AeroVista: Leveraging Computer Vision to Create High-Performance Search and Rescue Drones
 
-### Contributors
-Research Team Lead: [Elijah Walker](https://www.linkedin.com/in/elijahtruthwalker/)
+## Contributors
+* **Research Lead:** [Elijah Walker](https://www.linkedin.com/in/elijahtruthwalker/)
+* **Research Members:** [Aba Onumah](https://www.linkedin.com/in/aba-onumah-63315328b/), [Adrian Tran](https://www.linkedin.com/in/adrianvtran/), [Azia Bay-Asen](https://www.linkedin.com/in/aziabay/), [Ibrahim Abdel Rahman](https://www.linkedin.com/in/ibrahim-abdel-rahman/), [Sreevasan Sivasubramanian](https://www.linkedin.com/in/sreevasan-sivasubramanian-0a3844228/)
+* **Faculty Advisors:** Dr. Yapeng Tian, Dr. Yu Xiang
 
-Research Team Members: [Aba Onumah](https://www.linkedin.com/in/aba-onumah-63315328b/), [Adrian Tran](https://www.linkedin.com/in/adrianvtran/), [Azia Bay-Asen](https://www.linkedin.com/in/aziabay/), [Ibrahim Abdel Rahman](https://www.linkedin.com/in/ibrahim-abdel-rahman/), & [Sreevasan Sivasubramanian](https://www.linkedin.com/in/sreevasan-sivasubramanian-0a3844228/)
+## Poster
 
-Faculty Advisors: Dr. Yapeng Tian and Dr. Yu Xiang
+![AeroVista Research Poster](https://github.com/IbrahimARahman/AeroVista/assets/99378816/db2bb05c-7ddd-4257-b4a8-f7facef0c4d9)
 
-## POSTER
+**Tags:** Artificial Intelligence (AI), Machine Learning (ML), Computer Vision (CV), Object Detection, Object Classification, Instance Segmentation, Image Segmentation, Real-Time Object Detector (RTMDet), Mask Region-Based Convolutional Neural Network (Mask R-CNN), Python, PyTorch, Torchvision, Albumentations, Image Augmentation, Voxel51, Search and Rescue (SAR), Search and Rescue Image Dataset for Person Detection (SARD), Unmanned Aerial Vehicles (UAVs), DJI Tello drones, DJITelloPy
 
-**Tags:** Machine Learning (ML), Computer Vision (CV), Artificial Intelligence (AI), Object Classification, Image Segmentation, Search-and-Rescue (SAR), Unmanned Aerial Vehicles (UAVs), Tello drones
-
-# Introduction
+## Introduction
 
 Search and Rescue (SAR) ...
 
-# Motivation
+## Motivation
 
 We sought to examine ...
 
-# Dataset and Experimental Setup
+## Dataset and Experimental Setup
 
 Our dataset ...
 
-# Architectures
+## Architectures
 
-## Mask-RCNN
+### Mask-RCNN
 
 The mask ...
 
-### Backbone
+#### Backbone
 The backbone consists of ...
 
-### Inner Layers
+#### Inner Layers
 The inner processing ...
 
-### The Head
+#### The Head
 In contrast to ...
 
-## RTMDet
+### RTMDet
 
 The Real-Time ...
 
-### Backbone
+#### Backbone
 The backbone consists of ...
 
-### Inner Layers
+#### Neck
 The inner processing ...
 
-### The Head
+#### Head
 In contrast to ...
 
-# Results
+## Results
 
 As shown in the figures ...
 
-# Analysis
+## Analysis
 
 The implication of our results ...
 
-# Conclusion
+## Conclusion
 
 In summary ...
