@@ -67,13 +67,21 @@ As shown in the figures ...
 
 The Mask R-CNN loss functions for training and validation in Figure 7 maintain relative proximity and converge near the same horizontal line. If the functions did not converge, it would be a sign of either overfitting or underfitting, or that the model has failed to achieve a balance between learning from the training data and generalizing to new data. Instead, the graphed results for Mask R-CNN demonstrate appropriate fit.
 
+### Continued Learning
+
+Both the Mask R-CNN loss functions for training and validation in Figure 7 and the RTMDet loss functions for training in Figure 8 gradually decrease, signifying that both models continued to learn from the training data over time.
+
 ### Epochs
 
-Both the Mask R-CNN loss functions for training and validation in Figure 7 and the RTMDet loss functions for training in Figure 8 gradually decrease, signifying that both models continued to learn from the training data over time. Notably, RTMDet takes more epochs to converge when compared to Mask R-CNN. To combat this difference, we trained RTMDet over forty epochs and Mask R-CNN over ten.
+Notably, RTMDet takes more epochs to converge when compared to Mask R-CNN. To combat this difference, we trained RTMDet over forty epochs and Mask R-CNN over ten.
 
 ### Mean Average Precision (mAP)
 
-The table under Figure 5 and Figure 6 exhibits the box mAP50 and mask mAP50 values we obtained for Mask R-CNN and RTMDet. Our results are higher when compared to the corresponding metrics for both models, demonstrating the effectiveness of our model fine-tuning methods and dataset training.
+The table under Figure 5 and Figure 6 exhibits the box mAP50 and mask mAP50 values we obtained for Mask R-CNN and RTMDet. Our results are higher when compared to the corresponding metrics for both base models, demonstrating the effectiveness of our model fine-tuning methods and dataset training.
+
+### Intersection over Union (IoU)
+
+We chose to compare mAP values at IoU 0.5. We achieved the greatest mAP results at the threshold, and it is sufficient for the task of object detection.
 
 ## Conclusion
 
