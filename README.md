@@ -2,7 +2,7 @@
 
 ## Contributors
 * **Research Lead:** [Elijah Walker](https://www.linkedin.com/in/elijahtruthwalker/)
-* **Research Team:** [Aba Onumah](https://www.linkedin.com/in/aba-onumah-63315328b/), [Adrian Tran](https://www.linkedin.com/in/adrianvtran/), [Azia Bay-Asen](https://www.linkedin.com/in/aziabay/), [Ibrahim Abdel Rahman](https://www.linkedin.com/in/ibrahim-abdel-rahman/), [Sreevasan Sivasubramanian](https://www.linkedin.com/in/sreevasan-sivasubramanian-0a3844228/)
+* **Research Team:** [Azia Bay-Asen](https://www.linkedin.com/in/aziabay/), [Ibrahim Abdel Rahman](https://www.linkedin.com/in/ibrahim-abdel-rahman/), [Aba Onumah](https://www.linkedin.com/in/aba-onumah-63315328b/), [Adrian Tran](https://www.linkedin.com/in/adrianvtran/), [Sreevasan Sivasubramanian](https://www.linkedin.com/in/sreevasan-sivasubramanian-0a3844228/)
 * **Faculty Advisors:** Dr. Yapeng Tian, Dr. Yu Xiang
 
 ## Poster
@@ -51,7 +51,7 @@ The backbone consists of ...
 
 #### Neck
 
-RTMDet uses the Feature Pyramid Attention Module with Positional Encoding for Object Detection (PAFPN) for its neck architecture, fusing multi-level features from the backbone. PAFPN is built on Feature Pyramid Networks (FPNs), popular neural network architectures used for object detection. FPNs come with the disadvantage of having long information paths between lower layers and top-most features. PAFPN overcomes this disadvantage by combing FPNs with bottom-up path augmentation. The neck architecture uses the same basic building blocks as the backbone but includes bottom-up and top-down feature propagation to enhance the overarching pyramid feature map.
+RTMDet uses the Feature Pyramid Attention Module with Positional Encoding for Object Detection (PAFPN) for its neck architecture, fusing multi-level features from the backbone. PAFPN is built on Feature Pyramid Networks (FPNs), popular neural network architectures used for object detection. FPNs come with the disadvantage of having long information paths between lower layers and top-most features. PAFPN overcomes this disadvantage by combining FPNs with bottom-up path augmentation. The neck architecture uses the same basic building blocks as the backbone but includes bottom-up and top-down feature propagation to enhance the overarching pyramid feature map.
 
 #### Head
 
@@ -62,6 +62,18 @@ In contrast to ...
 As shown in the figures ...
 
 ## Analysis
+
+### Appropriate Fit
+
+The Mask R-CNN loss functions for training and validation in Figure 7 maintain relative proximity and converge near the same horizontal line. If the functions did not converge, it would be a sign of either overfitting or underfitting, or that the model has failed to achieve a balance between learning from the training data and generalizing to new data. Instead, the graphed results for Mask R-CNN demonstrate appropriate fit.
+
+### Epochs
+
+Both the Mask R-CNN loss functions for training and validation in Figure 7 and the RTMDet loss functions for training in Figure 8 gradually decrease, signifying that both models continued to learn from the training data over time. Notably, RTMDet takes more epochs to converge when compared to Mask R-CNN. To combat this difference, we trained RTMDet over forty epochs and Mask R-CNN over ten.
+
+### Mean Average Precision (mAP)
+
+The table under Figure 5 and Figure 6 exhibits the box mAP50 and mask mAP50 values we obtained for Mask R-CNN and RTMDet. Our results are higher when compared to the corresponding metrics for both models, demonstrating the effectiveness of our model fine-tuning methods and dataset training.
 
 ## Conclusion
 
