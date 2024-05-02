@@ -70,7 +70,7 @@ The Real-Time ...
 
 #### Backbone
 
-The backbone consists of ...
+The backbone consists of the Cross Stage Partial Network (CSPNet) that reduces computational complexity and enhances inference speed during model training. The CSPNet seperates the feature map that originates from the base layer into 2 segments: a part that goes through a dense block and transition layer while the other combines with the feature map again and is used in the next stage. Unlike a DenseNet Architecture, the gradients that stem from the dense layers are independantly integrated, preventing an excessive amount of duplicate gradient information that come through the map and the layers, removing any type of computational "bottlenecks"
 
 #### Neck
 
@@ -79,7 +79,7 @@ RTMDet uses the Feature Pyramid Attention Module with Positional Encoding for Ob
 #### Head
 <img width="400" alt="RTMDetHeadCustom" src="https://github.com/IbrahimARahman/AeroVista/assets/108421238/9b9b6f01-aa6d-4592-8065-16bdb1d1e36a">
 
-In contrast to ...
+The detection head is the last part of the archtecture. It extracts the results from the feature pyramid module (PAFPN) to finally predict the bounding box coordinates and probablities of each potential object in an image. After PAFPN, the heads have the shared convolution weights where combined with a seperated batch normalization layer can predict results for rotated bounding box detection. For instance segmentation like the figure shown above, dynamic kernels(filters) that are generated from the learned weights and parameters can be used to conduct convolution with mask feature maps.
 
 ## Results
 
@@ -120,7 +120,7 @@ We chose to compare mAP values at IoU 0.5. We achieved the greatest mAP results 
 
 ## Conclusion
 
-In summary ...
+In summary, our project aimed to enhance existing machine learning architectures to assist individuals in distress. Moving forward, our goal is to integrate additional approximation or proxy labels into our training procedures to streamline the process. Furthermore, we aspire to expand annotations to encompass various objects within images, like trees or rocks. Additionally, we plan to experiment with image manipulation techniques to simulate different weather conditions and environments by applying diverse filters.
 
 ## References
 
