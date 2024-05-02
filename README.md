@@ -66,7 +66,7 @@ Mask R-CNN has three parallel heads, the classification head, bounding box regre
 
 ![RTM Det Architecture](https://github.com/IbrahimARahman/AeroVista/assets/108421238/37e4d167-1748-4f32-a7ba-3002bf386585)
 
-The Real-Time ...
+The Real-Time Multiple object Detection (RTMDet) archetecture excels in detecting multiple objects with speed and accuracy and in reliable for many computer vision tasks
 
 #### Backbone
 
