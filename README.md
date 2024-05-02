@@ -13,7 +13,7 @@
 
 ## Introduction
 
-Search and Rescue (SAR) ...
+Search and rescue (SAR) operations are vital for ensuring the safety of people in times of danger. Since 1982, over 50,000 people have been rescued worldwide from these SAR missions, which proves their efficacy in saving human life. These efforts can be streamlined using autonomous devices, with one of the most efficient being drones. Their portability, relatively low cost, and speed make them one of the best options in these types of operations. They are also scalable, since many autonomous drones can work in parallel without any human input. Recently, target pinpointing has been enhanced using machine learning, which are commonly Convolution Neural‐Networks, or CNNs. These innovative models can be used to benefit SAR mission strategy through image segmentation.
 
 ## Motivation
 Following what Ibrahim said, we sought to examine the performance of autonomous drones with image detection models and determine the most efficient and reliable model to utilize in search and rescue drones. 
@@ -27,19 +27,19 @@ Our dataset ...
 
 ### Mask R-CNN
 
-The mask ...
+Mask-RCNN is built off of another CNN called Faster-RCNN. When an image is processed with Faster-RCNN the output consists of class labels and bounding boxes. Since Mask-RCNN is built off of Faster-RCNN, it also outputs both of these but additionally outputs masks, which are pixel-by-pixel mappings of the objects found in the image. This means that most of the architecture is the same, with the only difference being an additional segmentation head in Mask R-CNN, whcih gives it the ability to produce masks.
 
 #### Backbone
 
-The backbone consists of ...
+The backbone of Mask R-CNN is used to extract feature maps from input images. It consists ResNet-50 and an FPN. ResNet-50 is a 50-layer convolutional neural network which contains 48 convolutional layers, one MaxPool layer, and one average pool layer. Added on top of the ResNet is the Feature Pyramid Network (FPN), which constructs a pyramid of feature maps at multiple levels, enhancing the network’s ability to detect objects at different scales.
 
 #### Inner Layers
 
-The inner processing ...
+Sitting on top of the backbone, the RPN is used to generate object proposals. This layer uses a sliding window over the feature map and outputs a set of potential bounding boxes and their objectness scores indicating the likelihood of an object being present. Anchors of different scales and aspect ratios are used at each sliding position to account for various object sizes and shapes. Once object proposals are made by the RPN, ROI Align is used to extract a fixed-size feature map from each proposal. ROIAlign improves upon the older ROI Pooling used in Faster R-CNN by using bilinear interpolation to compute the exact values of the input features at four regularly sampled locations in each ROI bin, and then aggregating the results using max or average pooling. This method preserves spatial precision, which is crucial for accurate mask prediction.
 
 #### The Head
 
-In contrast to ...
+Mask R-CNN has three parallel heads, the classification head, bounding box regression head, and the mask prediction head. The classicification head determines the probability of each RoI belonging to a specific class. The coordinates of each proposed bounding box are refined by the bounding box regression head. The last head is the mask prediction head. This head is unique from the other two because it is actually a small Fully Convolutional Network that outputs a binary mask for each RoI. The masks are generated independently for each class, but during training and inference, only the mask corresponding to the predicted class (excluding the background) is considered.
 
 ### RTMDet
 
