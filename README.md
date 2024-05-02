@@ -21,13 +21,28 @@ For our research, we used Mask-RCNN and RTMDET-Ins as the models for testing. We
 
 ## Dataset and Experimental Setup
 
-Our dataset is the SARD_YOLO dataset, which includes almost 2,000 overhead images of people in various environments. Many of these photos portray people in distress or hard-to-find locations, which is critical for search-and-rescue operations. For our validation set, we captured 100 images of our own using a Tello drone, featuring similar images that were manually annotated with Voxel51. The purpose of the validation set is to verify the efficacy of the model outside of the SARD_YOLO dataset, as well as testing its proficiency under a variety of real-world conditions. These conditions, such as fog, rain, or lighting differences, can impair the clarity of a drone's camera and the accuracy of the model. In order to account for these, we augmented the SARD_YOLO dataset for training. Using transformations like gaussian blurs, color jitters, elastic transformations, and solarization, we greatly enhanced the model's flexibility and accuracy. Some of these transformations, such as gaussian blurs, emulated foggy or rainy weather. In addition to augmenting the dataset, our validation set included many images at different angles, captured using a 3D-printed mirror mounted to the drone. This mirror setup allowed us to manipulate the angle of capture, permitting photos at angles anywhere between straight-on and straight down. Doing this tested the model's ability to detect humans from many different angles, beyond the scope of the SARD_YOLO dataset which only features high angle overhead images.
+![SARD YOLO Dataset Sample]([https://github.com/IbrahimARahman/AeroVista/assets/108421238/7f9ea0e4-7d15-4bdc-b5a8-bed5680b767b)]
+
+Our dataset is the SARD_YOLO dataset, which includes almost 2,000 overhead images of people in various environments. Many of these photos portray people in distress or hard-to-find locations, which is critical for search-and-rescue operations. For our validation set, we captured 100 images of our own using a Tello drone, featuring similar images that were manually annotated with Voxel51. The purpose of the validation set is to verify the efficacy of the model outside of the SARD_YOLO dataset, as well as testing its proficiency under a variety of real-world conditions. 
+
+![Our Dataset Sample]([https://github.com/IbrahimARahman/AeroVista/assets/108421238/b42f2607-0fe4-4109-83e8-f697e16b278f)]
+
+These conditions, such as fog, rain, or lighting differences, can impair the clarity of a drone's camera and the accuracy of the model. In order to account for these, we augmented the SARD_YOLO dataset for training. Using transformations like gaussian blurs, color jitters, elastic transformations, and solarization, we greatly enhanced the model's flexibility and accuracy. Some of these transformations, such as gaussian blurs, emulated foggy or rainy weather. In addition to augmenting the dataset, our validation set included many images at different angles, captured using a 3D-printed mirror mounted to the drone. 
+
+![Drone Image](https://github.com/IbrahimARahman/AeroVista/assets/108421238/14f27b28-6b13-4c44-be06-814e48664dd4)]
+
+This mirror setup allowed us to manipulate the angle of capture, permitting photos at angles anywhere between straight-on and straight down. Doing this tested the model's ability to detect humans from many different angles, beyond the scope of the SARD_YOLO dataset which only features high angle overhead images.
+
+
+![Drone Sample Video](https://github.com/IbrahimARahman/AeroVista/assets/108421238/203f7538-0e2f-45f4-8384-0f991905be34)]
 
 In order to operate the drone, we used the DJITelloPy API and OpenCV. The DJITelloPy API includes a variety of pre-programmed commands, allowing control over the drone's movement and access to its camera feed. Using this, we created a pre-programmed flight path for the drone, flying overhead and filming us below. The OpenCV library allows for real-time preview of the camera feed, as well as the ability to interface with the drone through keyboard controls. This allowed us to save frame captures on commmand, which we used to populate our validation set.
 
 ## Architectures
 
 ### Mask R-CNN
+
+![MASKRCNN Architecture](https://github.com/IbrahimARahman/AeroVista/assets/108421238/a2e8d47d-a738-4d37-b526-9f9307de3093)]
 
 Mask-RCNN is built off of another CNN called Faster-RCNN. When an image is processed with Faster-RCNN the output consists of class labels and bounding boxes. Since Mask-RCNN is built off of Faster-RCNN, it also outputs both of these but additionally outputs masks, which are pixel-by-pixel mappings of the objects found in the image. This means that most of the architecture is the same, with the only difference being an additional segmentation head in Mask R-CNN, whcih gives it the ability to produce masks.
 
@@ -45,6 +60,8 @@ Mask R-CNN has three parallel heads, the classification head, bounding box regre
 
 ### RTMDet
 
+![RTM Det Architecture](https://github.com/IbrahimARahman/AeroVista/assets/108421238/37e4d167-1748-4f32-a7ba-3002bf386585)]
+
 The Real-Time ...
 
 #### Backbone
@@ -57,13 +74,16 @@ RTMDet uses the Feature Pyramid Attention Module with Positional Encoding for Ob
 
 #### Head
 
+![RTM Det Architecture Head](https://github.com/IbrahimARahman/AeroVista/assets/108421238/547d66f5-1ebc-4ab1-a8b8-7ff889fe667d)]
+
 In contrast to ...
 
 ## Results
 
+![APAR Formulas](https://github.com/IbrahimARahman/AeroVista/assets/108421238/e9e6d4af-62b8-4e84-b2fd-b2fcd0c83747)]
+![mAP Formula](https://github.com/IbrahimARahman/AeroVista/assets/108421238/30cb3f14-914a-45e2-aab1-fa05f25479ab)]
+
 So talking about the results, as shown in the figures with the left graph being the Mask-RCNN mAP which was recorded at every 2 epochs and the second one being the RTMDet mAP Curve that was recorded at every 1 epoch. When analyzing our metrics, our mAP values, or the Mean Average Precision(TP/TP+FP), which just to clarify what True Positive is is that when the model detects a human, there is actually a human.This metric for RTM-Det is greater than for mask r-cnn which shows us that RTM-Det is more accurate when detecting people, so when RTM-Det says an object is a human, it is usually right about 77.8% of the time. Furthermore, the average recall(the average ratio of TP to total ground truth positives) which essentially tells us how accurate our model is at identifying true positives, again the metric is RTM-Det is greater than Mask r-cnn, although in this case, we would like to see the values for both models be a bit higher. Lastly, when observing the IoU, or the intersection over union, we see that it is quite similar for both models. Our range for the IoU is from 0.5-0.95 and the similarities between the models can be attributed to potentially their simialrities in their architecture such as their backbone network or their ROI pooling. 
-
-
 
 ## Analysis
 
