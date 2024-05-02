@@ -16,8 +16,8 @@
 Search and Rescue (SAR) ...
 
 ## Motivation
-
-We sought to examine ...
+Following what Ibrahim said, we sought to examine the performance of autonomous drones with image detection models and determine the most efficient and reliable model to utilize in search and rescue drones. 
+For our research, we used Mask-RCNN and RTMDET-Ins as the models for testing. We trained both these models on a given dataset of images and tested the drone with both online example images and custom images made by our group. We hope that via our research, we can find an efficient model implementation that can be used in actual implementations of search and rescure drones to help save individuals in distress. 
 
 ## Dataset and Experimental Setup
 
@@ -59,7 +59,9 @@ In contrast to ...
 
 ## Results
 
-As shown in the figures ...
+So talking about the results, as shown in the figures with the left graph being the Mask-RCNN mAP which was recorded at every 2 epochs and the second one being the RTMDet mAP Curve that was recorded at every 1 epoch. When analyzing our metrics, our mAP values, or the Mean Average Precision(TP/TP+FP), which just to clarify what True Positive is is that when the model detects a human, there is actually a human.This metric for RTM-Det is greater than for mask r-cnn which shows us that RTM-Det is more accurate when detecting people, so when RTM-Det says an object is a human, it is usually right about 77.8% of the time. Furthermore, the average recall(the average ratio of TP to total ground truth positives) which essentially tells us how accurate our model is at identifying true positives, again the metric is RTM-Det is greater than Mask r-cnn, although in this case, we would like to see the values for both models be a bit higher. Lastly, when observing the IoU, or the intersection over union, we see that it is quite similar for both models. Our range for the IoU is from 0.5-0.95 and the similarities between the models can be attributed to potentially their simialrities in their architecture such as their backbone network or their ROI pooling. 
+
+
 
 ## Analysis
 
