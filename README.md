@@ -45,8 +45,8 @@ In order to operate the drone, we used the DJITelloPy API and OpenCV. The DJITel
 
 ### Mask R-CNN
 
-<img width="416" alt="MASKRCNNArchSimplified" src="https://github.com/IbrahimARahman/AeroVista/assets/108421238/84a45295-7acb-4db1-b47b-259b3f36e121">
-<img width="550" alt="MaskRCNNAarch" src="https://github.com/IbrahimARahman/AeroVista/assets/108421238/fd17d8ba-52b1-4706-8bd1-1730bb47c505">
+<img width="333" alt="MASKRCNNArchSimplified" src="https://github.com/IbrahimARahman/AeroVista/assets/108421238/84a45295-7acb-4db1-b47b-259b3f36e121">
+<img width="440" alt="MaskRCNNAarch" src="https://github.com/IbrahimARahman/AeroVista/assets/108421238/fd17d8ba-52b1-4706-8bd1-1730bb47c505">
 
 Mask-RCNN is built off of another CNN called Faster-RCNN. When an image is processed with Faster-RCNN the output consists of class labels and bounding boxes. Since Mask-RCNN is built off of Faster-RCNN, it also outputs both of these but additionally outputs masks, which are pixel-by-pixel mappings of the objects found in the image. This means that most of the architecture is the same, with the only difference being an additional segmentation head in Mask R-CNN, whcih gives it the ability to produce masks.
 
@@ -83,8 +83,8 @@ In contrast to ...
 
 ## Results
 
-<img width="500" alt="APARFormula" src="https://github.com/IbrahimARahman/AeroVista/assets/108421238/633d9bfb-8ff9-41b9-a3bc-6dbd18d73f9e">
-<img width="467" alt="mAPFormula" src="https://github.com/IbrahimARahman/AeroVista/assets/108421238/c6867db6-bb74-4722-986c-51f62ad5ac95">
+<img width="400" alt="APARFormula" src="https://github.com/IbrahimARahman/AeroVista/assets/108421238/633d9bfb-8ff9-41b9-a3bc-6dbd18d73f9e">
+<img width="374" alt="mAPFormula" src="https://github.com/IbrahimARahman/AeroVista/assets/108421238/c6867db6-bb74-4722-986c-51f62ad5ac95">
 
 
 So talking about the results, as shown in the figures with the left graph being the Mask-RCNN mAP which was recorded at every 2 epochs and the second one being the RTMDet mAP Curve that was recorded at every 1 epoch. When analyzing our metrics, our mAP values, or the Mean Average Precision(TP/TP+FP), which just to clarify what True Positive is is that when the model detects a human, there is actually a human.This metric for RTM-Det is greater than for mask r-cnn which shows us that RTM-Det is more accurate when detecting people, so when RTM-Det says an object is a human, it is usually right about 77.8% of the time. Furthermore, the average recall(the average ratio of TP to total ground truth positives) which essentially tells us how accurate our model is at identifying true positives, again the metric is RTM-Det is greater than Mask r-cnn, although in this case, we would like to see the values for both models be a bit higher. Lastly, when observing the IoU, or the intersection over union, we see that it is quite similar for both models. Our range for the IoU is from 0.5-0.95 and the similarities between the models can be attributed to potentially their simialrities in their architecture such as their backbone network or their ROI pooling. 
@@ -97,8 +97,8 @@ Below a sample output of RTMDet-Ins-s can be seen.
 
 ### Appropriate Fit
 
-<img width="430" alt="MASKRCNNLOSS" src="https://github.com/IbrahimARahman/AeroVista/assets/108421238/e3c6a1b4-8588-4360-b2ef-6e786ec384d9">
-<img width="460" alt="RTMDETLOSS" src="https://github.com/IbrahimARahman/AeroVista/assets/108421238/8533480b-13f7-4322-8225-f9cc3c518e3e">
+<img width="344" alt="MASKRCNNLOSS" src="https://github.com/IbrahimARahman/AeroVista/assets/108421238/e3c6a1b4-8588-4360-b2ef-6e786ec384d9">
+<img width="368" alt="RTMDETLOSS" src="https://github.com/IbrahimARahman/AeroVista/assets/108421238/8533480b-13f7-4322-8225-f9cc3c518e3e">
 
 The Mask R-CNN loss functions for training and validation in Figure 7 maintain relative proximity and converge near the same horizontal line. If the functions did not converge, it would be a sign of either overfitting or underfitting, or that the model has failed to achieve a balance between learning from the training data and generalizing to new data. Instead, the graphed results for Mask R-CNN demonstrate appropriate fit.
 
