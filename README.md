@@ -16,15 +16,14 @@
 Search and rescue (SAR) operations are vital for ensuring the safety of people in times of danger. Since 1982, over 50,000 people have been rescued worldwide from these SAR missions, which proves their efficacy in saving human life. These efforts can be streamlined using autonomous devices, with one of the most efficient being drones. Their portability, relatively low cost, and speed make them one of the best options in these types of operations. They are also scalable, since many autonomous drones can work in parallel without any human input. Recently, target pinpointing has been enhanced using machine learning, which are commonly Convolution Neural‐Networks, or CNNs. These innovative models can be used to benefit SAR mission strategy through image segmentation.
 
 ## Motivation
-Following what Ibrahim said, we sought to examine the performance of autonomous drones with image detection models and determine the most efficient and reliable model to utilize in search and rescue drones. 
-For our research, we used Mask-RCNN and RTMDET-Ins as the models for testing. We trained both these models on a search and rescue dataset containing images and also tested the model with custom images made by our group. We hope that via our research, we can find an efficient model example that can be used in actual implementations of search and rescue drones to help save individuals in distress. 
+We sought to examine the performance of autonomous drones with image detection models and determine the most efficient and reliable model to utilize in search and rescue drones. For our research, we used Mask-RCNN and RTMDET-Ins as the models for testing. We trained both these models on a search and rescue dataset containing images and also tested the model with custom images made by our group. We hope that via our research, we can find an efficient model example that can be used in actual implementations of search and rescue drones to help save individuals in distress. 
 
 ## Dataset and Experimental Setup
 
 <img width="932" alt="SARDYOLODATASET" src="https://github.com/IbrahimARahman/AeroVista/assets/108421238/bea93ae2-6a2f-414f-90c4-c9b1e7ac65b0">
 
 
-Our dataset is the SARD_YOLO dataset, which includes almost 2,000 overhead images of people in various environments. Many of these photos portray people in distress or hard-to-find locations, which is critical for search-and-rescue operations. For our validation set, we captured 100 images of our own using a Tello drone, featuring similar images that were manually annotated with Voxel51. The purpose of the validation set is to verify the efficacy of the model outside of the SARD_YOLO dataset, as well as testing its proficiency under a variety of real-world conditions. 
+Our dataset is the SARD_YOLO dataset, which includes almost 2,000 overhead images of people in various environments. Many of these photos portray people in distress or hard-to-find locations, which is critical for search-and-rescue operations. As shown above, the dataset highlights different people located within the wilderness. For our validation set, we captured 100 images of our own using a Tello drone, featuring similar images that were manually annotated with Voxel51. The purpose of the validation set is to verify the efficacy of the model outside of the SARD_YOLO dataset, as well as testing its proficiency under a variety of real-world conditions. 
 
 These conditions, such as fog, rain, or lighting differences, can impair the clarity of a drone's camera and the accuracy of the model. In order to account for these, we augmented the SARD_YOLO dataset for training. Using transformations like gaussian blurs, color jitters, elastic transformations, and solarization, we greatly enhanced the model's flexibility and accuracy. Some of these transformations, such as gaussian blurs, emulated foggy or rainy weather. In addition to augmenting the dataset, our validation set included many images at different angles, captured using a 3D-printed mirror mounted to the drone. 
 
@@ -35,7 +34,7 @@ These conditions, such as fog, rain, or lighting differences, can impair the cla
 
 
 
-This mirror setup allowed us to manipulate the angle of capture, permitting photos at angles anywhere between straight-on and straight down. Doing this tested the model's ability to detect humans from many different angles, beyond the scope of the SARD_YOLO dataset which only features high angle overhead images.
+As shown above, this mirror setup allowed us to manipulate the angle of capture, permitting photos at angles anywhere between straight-on and straight down. Doing this tested the model's ability to detect humans from many different angles, beyond the scope of the SARD_YOLO dataset which only features high angle overhead images. An example video of our dataset is shown below. As depicted, we could not take every frame from the video as some of the movements required the drone to stabilize which would flick the camera angle, making it inherently inextractable. But, we took some frames from this video along with the others that were taken.
 
 https://github.com/IbrahimARahman/AeroVista/assets/108421238/9729aa52-dd37-4e73-b004-24f4d16eb650
 
@@ -48,7 +47,7 @@ In order to operate the drone, we used the DJITelloPy API and OpenCV. The DJITel
 <img width="333" alt="MASKRCNNArchSimplified" src="https://github.com/IbrahimARahman/AeroVista/assets/108421238/84a45295-7acb-4db1-b47b-259b3f36e121">
 <img width="440" alt="MaskRCNNAarch" src="https://github.com/IbrahimARahman/AeroVista/assets/108421238/fd17d8ba-52b1-4706-8bd1-1730bb47c505">
 
-Mask-RCNN is built off of another CNN called Faster-RCNN. When an image is processed with Faster-RCNN the output consists of class labels and bounding boxes. Since Mask-RCNN is built off of Faster-RCNN, it also outputs both of these but additionally outputs masks, which are pixel-by-pixel mappings of the objects found in the image. This means that most of the architecture is the same, with the only difference being an additional segmentation head in Mask R-CNN, whcih gives it the ability to produce masks.
+Mask-RCNN is built off of another CNN called Faster-RCNN. When an image is processed with Faster-RCNN the output consists of class labels and bounding boxes. Since Mask-RCNN is built off of Faster-RCNN, it also outputs both of these but additionally outputs masks, which are pixel-by-pixel mappings of the objects found in the image. This means that most of the architecture is the same, with the only difference being an additional segmentation head in Mask R-CNN, whcih gives it the ability to produce masks. Two unique representations of the architecture are pictured above.
 
 #### Backbone
 
@@ -66,7 +65,7 @@ Mask R-CNN has three parallel heads, the classification head, bounding box regre
 
 ![RTM Det Architecture](https://github.com/IbrahimARahman/AeroVista/assets/108421238/37e4d167-1748-4f32-a7ba-3002bf386585)
 
-The Real-Time Multiple object Detection (RTMDet) archetecture excels in detecting multiple objects with speed and accuracy and in reliable for many computer vision tasks
+The Real-Time Multiple object Detection (RTMDet) archetecture excels in detecting multiple objects with speed and accuracy and in reliable for many computer vision tasks. The architecture is displayed above which we will dive deeper into.
 
 #### Backbone
 
@@ -79,7 +78,7 @@ RTMDet uses the Feature Pyramid Attention Module with Positional Encoding for Ob
 #### Head
 <img width="400" alt="RTMDetHeadCustom" src="https://github.com/IbrahimARahman/AeroVista/assets/108421238/9b9b6f01-aa6d-4592-8065-16bdb1d1e36a">
 
-The detection head is the last part of the archtecture. It extracts the results from the feature pyramid module (PAFPN) to finally predict the bounding box coordinates and probablities of each potential object in an image. After PAFPN, the heads have the shared convolution weights where combined with a seperated batch normalization layer can predict results for rotated bounding box detection. For instance segmentation like the figure shown above, dynamic kernels(filters) that are generated from the learned weights and parameters can be used to conduct convolution with mask feature maps.
+The detection head is the last part of the archtecture. It extracts the results from the feature pyramid module (PAFPN) to finally predict the bounding box coordinates and probablities of each potential object in an image. After PAFPN, the heads have the shared convolution weights where combined with a seperated batch normalization layer can predict results for rotated bounding box detection. For instance segmentation like the figure shown above, dynamic kernels (filters) that are generated from the learned weights and parameters can be used to conduct convolution with mask feature maps.
 
 ## Results
 
@@ -87,7 +86,7 @@ The detection head is the last part of the archtecture. It extracts the results 
 <img width="374" alt="mAPFormula" src="https://github.com/IbrahimARahman/AeroVista/assets/108421238/c6867db6-bb74-4722-986c-51f62ad5ac95">
 
 
-So talking about the results, as shown in the figures with the left graph being the Mask-RCNN mAP which was recorded at every 2 epochs and the second one being the RTMDet mAP Curve was recorded at every 1 epoch, we can see that the mAP values increase as more epochs were recorded. When analyzing our table, our mAP values, or the Mean Average Precision(TP/TP+FP), which just to clarify what True Positive is is that when the model detects a human, there is a human. Both box mAP and mask mAP are greater for  RTM-Det than for mask r-cnn which shows us that RTM-Det is more accurate when detecting people, so when RTM-Det says an object is a human, it is usually right about 78% of the time. The reason for choosing mAP is that it is a standardized metric with easy interpretation to determine the model's performance. Furthermore, the average recall(the average ratio of TP to total ground truth positives) so the total ground truth positives are the total people. Again the metric for RTM-Det is greater than Mask r-CNN, although in this case, we would like to see the values for both models be a bit higher. Lastly, when observing the IoU, or the intersection over union, we see that it is quite similar for both models. Our range for the IoU is from 0.5-0.95 and the similarities between the models can be attributed to potentially their similarities in their architecture such as their backbone network or their ROI pooling. 
+As shown in the figures with the left graph being the Mask-RCNN mAP which was recorded at every 2 epochs and the second one being the RTMDet mAP Curve was recorded at every 1 epoch, we can see that the mAP values increase as more epochs were recorded. When analyzing our table, our mAP values, or the Mean Average Precision(TP/TP+FP), which just to clarify what True Positive is is that when the model detects a human, there is a human. We formulas are listed above for further clarification. Both box mAP and mask mAP are greater for  RTM-Det than for mask r-cnn which shows us that RTM-Det is more accurate when detecting people, so when RTM-Det says an object is a human, it is usually right about 78% of the time. The reason for choosing mAP is that it is a standardized metric with easy interpretation to determine the model's performance. Furthermore, the average recall(the average ratio of TP to total ground truth positives) so the total ground truth positives are the total people. Again the metric for RTM-Det is greater than Mask r-CNN, although in this case, we would like to see the values for both models be a bit higher. Lastly, when observing the IoU, or the intersection over union, we see that it is quite similar for both models. Our range for the IoU is from 0.5-0.95 and the similarities between the models can be attributed to potentially their similarities in their architecture such as their backbone network or their ROI pooling. 
 
 Below a sample output of RTMDet-Ins-s can be seen.
 
